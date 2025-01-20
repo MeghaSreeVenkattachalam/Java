@@ -15,7 +15,7 @@ class Smallest_Number{
 			min = Math.min(rem,min);
 			n=n/10;
 		}
-		System.out.println("The Smallest Number is ",min);
+		System.out.println("The Smallest Number is "+min);
 	}
 }
 
