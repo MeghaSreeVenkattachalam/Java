@@ -1,4 +1,4 @@
-Reverse an array
+Reverse an Array
 
 CODE:
 
