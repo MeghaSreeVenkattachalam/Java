@@ -21,6 +21,12 @@ Output 1 :
 Input 2 :
 5
 91 0.10
+65 0.15
+80 0.20 
+73 0.25
+68 0.30
+Output 2 :
+73.50
 
 CODE:
   
@@ -58,12 +64,3 @@ Enter the test scores and weights:
 73 0.25
 68 0.30
 The weighted average is: 73.50 
-
-65 0.15
-
-
-80 0.20 
-73 0.25
-68 0.30
-Output 2 :
-73.50
