@@ -11,6 +11,7 @@ class Consonent_Characters{
 		
 		//converted them into toCharArray
 		char ch[] =str.toCharArray();
+		System.out.print("The consonents in the given input is: ");
 		for(int i=0;i<str.length();i++){
 			
 			//if(str.charAt(i)=='a'||str.charAt(i)=='e'||str.charAt(i)=='i'||str.charAt(i)=='o'||str.charAt(i)=='u'){
@@ -19,7 +20,7 @@ class Consonent_Characters{
 				continue;
 			}
 			else{
-				System.out.println("The consonents in the given input is "+ch[i]);
+				System.out.print(ch[i]);
 			}
 			//without else
 				//give System.out.print(str.charAt(i));
