@@ -31,3 +31,18 @@ Enter the array values:
 1 2 3 4
 The Reverse array is
 4 3 2 1
+
+Reversing an array in the same can also look at this:
+
+public static void reverseArray(int arr[]) {
+       int left = 0;
+       int right = arr.length-1;
+       while(left<right){
+           int temp = arr[left];
+           arr[left] = arr[right];
+           arr[right] = temp;
+           
+           left++;
+           right--;
+       }
+    }
