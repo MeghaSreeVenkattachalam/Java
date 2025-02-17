@@ -1,3 +1,5 @@
+Find the second largest element in the array
+
 import java.util.*;
 class Second_Largest_Element
  {
