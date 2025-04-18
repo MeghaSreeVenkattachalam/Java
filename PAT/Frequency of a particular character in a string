@@ -1,0 +1,51 @@
+Bobby is attending a seminar on coding, which makes learning more interesting. During the seminar session, he was given a task to find the frequency of a character. Help him find the frequency of a character in a given string.
+
+Input format :
+The first line of input consists of a string.
+
+The second line of input consists of the character to find its frequency.
+
+Output format :
+The output consists of the frequency of the character.
+
+
+
+Refer to the sample input and output for format specifications.
+
+Code constraints :
+Characters are case-sensitive.
+
+Sample test cases :
+Input 1 :
+Sample Data for analysis
+a
+Output 1 :
+Frequency of a = 5
+Input 2 :
+Hello Learn c Program
+o
+Output 2 :
+Frequency of o = 2
+Input 3 :
+Lower and Upper Letter to be noted in alphabets
+L
+Output 3 :
+Frequency of L = 2
+
+CODE:
+
+import java.util.*;
+class Main{
+public static void main(String args[]){
+Scanner sc = new Scanner(System.in);
+String s = sc.nextLine();
+char ch = sc.next().charAt(0);
+int count=0;
+for(int c:s.toCharArray()){
+if(c==ch){
+count++;
+}
+}
+System.out.print("Frequency of "+String.valueOf(ch)+" = "+count);
+}
+}
