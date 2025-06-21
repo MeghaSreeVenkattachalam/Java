@@ -29,6 +29,28 @@ Only one valid answer exists.
 
 CODE:
 
+ class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        for(int i =1;i<nums.length;i++){
+            for(int j =i;j<nums.length;j++){
+                if(nums[j]+nums[j-i] == target){
+                    return new int[]{j,j-i};
+                }
+            }
+        }
+        return new int[]{};   
+    }
+}
+
+OUTPUT:
+
+Runtime
+0
+ms
+Beats
+100.00%
+
+ //ANOTHER APPROACH:
 class Solution {
     public int[] twoSum(int[] nums, int target) {
         Map<Integer,Integer> map = new HashMap<>();
