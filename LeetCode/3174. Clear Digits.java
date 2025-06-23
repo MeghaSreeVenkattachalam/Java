@@ -55,3 +55,41 @@ Runtime
 ms
 Beats
 100.00%
+
+
+//ANOTHER APPROACH - USING STACK
+
+CODE:
+
+public class Solution {
+    public static String clearDigits(String s) {
+        Stack<Character> stack = new Stack<>();
+        for(char ch:s.toCharArray()){
+            if(Character.isDigit(ch)){
+                while(!stack.isEmpty()){
+                    char top = stack.peek();
+                    if(!Character.isDigit(top)){
+                        stack.pop();
+                        break;
+                    }
+                }
+            }else{
+                stack.push(ch);
+            }
+        }
+        StringBuilder res = new StringBuilder();
+        for(char ch:stack){
+            res.append(ch);
+        }
+        return res.toString();
+    }
+}
+
+
+OUTPUT:
+
+Runtime
+3
+ms
+Beats
+31.96%
