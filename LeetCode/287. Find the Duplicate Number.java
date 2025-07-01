@@ -27,7 +27,37 @@ nums.length == n + 1
 1 <= nums[i] <= n
 All the integers in nums appear only once except for precisely one integer which appears two or more times.
 
+CODE:
 
+ class Solution {
+    public int findDuplicate(int[] arr) {
+        int slow = arr[0];
+        int fast = arr[0];
+        do{
+            slow = arr[slow];
+            fast = arr[arr[fast]];
+        }while(slow!=fast);
+        
+        slow = arr[0];
+        while(slow!=fast){
+            slow = arr[slow];
+            fast = arr[fast];
+        }
+        return slow;
+    }
+}
+
+OUTPUT:
+
+Runtime
+4
+ms
+Beats
+88.87%
+
+ 
+ //ANOTHER APPROACH:
+ 
 CODE:
 
 class Solution {
