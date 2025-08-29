@@ -27,6 +27,8 @@ grid[i][j] is either 0 or 1.
 
 CODE:
 
+ //USING BFS
+ 
 class Solution {
     private int bfs(int[][] grid, int startRow, int startCol){
         int rows = grid.length;
@@ -96,3 +98,50 @@ Runtime
 ms
 Beats
 29.94%
+
+
+//USING DFS
+
+ class Solution {
+    private int dfs(int[][] grid, int row, int col){
+        if(row<0 || row>=grid.length || col<0 || col>=grid[0].length || grid[row][col]==0){
+            return 0;
+        }
+        grid[row][col]=0;
+        int area = 1;
+        //up
+        area+=dfs(grid,row-1,col);
+        //down 
+        area+=dfs(grid,row+1,col);
+        //left
+        area+=dfs(grid,row,col-1);
+        //right
+        area+=dfs(grid,row,col+1);
+        
+        return area;
+    }
+    public int maxAreaOfIsland(int[][] grid) {
+        if(grid==null || grid.length==0){
+            return 0;
+        }
+
+        int max = 0;
+        for(int i=0;i<grid.length;i++){
+            for(int j=0;j<grid[i].length;j++){
+                if(grid[i][j]==1){
+                    int area = dfs(grid,i,j);
+                    max = Math.max(area,max);
+                }
+            }
+        }
+        return max;
+    }
+}
+
+OUTPUT:
+
+Runtime
+1
+ms
+Beats
+100.00%
