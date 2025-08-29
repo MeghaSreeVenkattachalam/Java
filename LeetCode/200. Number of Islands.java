@@ -33,6 +33,8 @@ grid[i][j] is '0' or '1'.
 
 CODE:
 
+ //USING BFS
+ 
 class Solution {
     public void bfs(char grid[][], int startRow, int startCol){
         int rows = grid.length;
@@ -97,3 +99,49 @@ Runtime
 ms
 Beats
 49.34
+
+
+//USING DFS
+
+ class Solution {
+    private void dfs(char[][] grid, int row, int col){
+        if(row<0 || row>=grid.length || col<0 || col>=grid[0].length || grid[row][col]=='0'){
+            return;
+        }
+
+        grid[row][col]='0';
+
+        //up
+        dfs(grid,row-1,col);
+        //down
+        dfs(grid,row+1,col);
+        //left
+        dfs(grid,row,col-1);
+        //right
+        dfs(grid,row,col+1);
+    }
+    public int numIslands(char[][] grid) {
+        if(grid==null || grid.length==0){
+            return 0;
+        }
+
+        int isLandCount = 0;
+        for(int i=0;i<grid.length;i++){
+            for(int j=0;j<grid[i].length;j++){
+                if(grid[i][j]=='1'){
+                    isLandCount++;
+                    dfs(grid,i,j);
+                }
+            }
+        }
+        return isLandCount;
+    }
+}
+
+OUTPUT:
+
+Runtime
+3
+ms
+Beats
+83.44%
