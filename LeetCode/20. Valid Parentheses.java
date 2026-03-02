@@ -68,3 +68,27 @@ Runtime
 ms
 Beats
 97.14%
+
+
+ANOTHER APPROACH:
+
+CODE:
+
+class Solution {
+    public boolean isValid(String s) {
+        while(s.contains("[]")|| s.contains("{}")||(s.contains("()"))){
+            s = s.replace("{}","");
+            s = s.replace("[]","");
+            s = s.replace("()","");
+        }
+        return s.isEmpty();
+    }
+}
+
+OUTPUT:
+
+Runtime
+193
+ms
+Beats
+6.51%
